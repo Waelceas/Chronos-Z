@@ -1,0 +1,31 @@
+[package]
+
+name = "tracker-cli"
+
+version = "0.1.0"
+
+edition = "2021"
+
+authors = ["Sen"]
+
+description = "Gün bazlı çalışma takip aracı"
+
+[features]
+default = []
+no-gui = []
+
+[[bin]]
+name = "tracker"
+path = "src/main.rs"
+
+[dependencies]
+cxx = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+# Sadece tty özelliğini bırakıyoruz:
+comfy-table = { version = "7.1", features = ["tty"] }
+anyhow = "1.0"
+chrono = "0.4"
+
+[build-dependencies]
+
+cxx-build = "1.0"
